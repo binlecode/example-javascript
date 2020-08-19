@@ -8,6 +8,8 @@
  *
  */
 
+"use strict";
+
 // when using bracket even for one liner, do put `return` in the statement
 const pwr = (x) => { return x * x; };
 console.log(pwr(3));
