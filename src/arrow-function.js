@@ -29,10 +29,14 @@ function showFunThis() {
     console.log("function's this is: " + this);
 }
 
-const showArrThis = () => { console.log("arrow funciton's this is: " + this) };
+const showArrThis = () => { console.log("arrow funciton's this is: " + typeof this) };
 
-showFunThis(); // undefined, since it is called in global
-showArrThis(); // [object Object], the reference of the script object
+// If non strict mode, global object is the window object in browser, or an object 
+// called 'global' in node runtime. 
+// In strict mode it's `undefined`.
+
+showFunThis(); // undefined, the global object
+showArrThis(); // [object Object], the javascript object that defines the arrow function
 
 // The example below has an arrow function defined by a scope including
 // a variable `ctx`, which is changed by the arrow funciton during its call.
