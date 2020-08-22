@@ -5,17 +5,19 @@ In javascript, there are four patterns of invoking a function:
 - method invocation: a function referred as a property in an object
 - function invocation: function not as a property of an object
 - constructor invocation: the `new` keyword pre-fixed invocation
-- apply invocation: the 'apply' or 'call' method that comes with function object 
+- 'apply' or 'call' method that comes with function object 
 
-The invocation patterns differ in how the `this` binding is initialized.
+These invocation patterns differ in how the `this` binding is initialized.
 
-In constructor invocation: a new object will be created with a hidden link to the 
-value of the function’s prototype member, and this will be bound to that new object.
+In constructor invocation: a new object will be created with a hidden link 
+to the value of the function’s prototype member, and `this` will be bound
+to that new object.
 
 */
 
-// javascript methods are class properties that hold function values
+'use strict';
 
+// javascript methods are class properties that hold function values
 let duck = {color: 'yellow'};
 
 duck.quack = function(msg) {
@@ -44,9 +46,11 @@ function speak(msg) {
 let speackingDuck = {type: 'duck', speak: speak};
 // method call has implicity binding of `this` pointing to the object
 speackingDuck.speak('hello');
-// if called as a function with explicit `.call`, `this` binding is passed in 
-// as the first argument
-speak.call(duck, 'hello');
+
+// if called as a function with explicit `.call`, `this` binding is 
+// passed in as the first argument
+let anotherSpeakingDuck = {type: 'duck'}
+speak.call(anotherSpeakingDuck, 'hello from another duck');
 
 // function way: function value is not among object properties
 let dog = {type: 'dog'};
@@ -56,11 +60,13 @@ speak.call(dog, 'how are you');
 let fox = {type: 'fox', speak: speak};
 fox.speak('cheers');
 
-// in either case above, the binding of `this` is resolved at calling time
+// In either case above, the binding of `this` is resolved at calling time
 
-// if called without providing `this` binding, then `this` is undefined, because
-// `this` is bound to the global scope, which is window object by default, where 
-// we don't have a DOM defined in this case, thus it becomes undefined.
+// If called without providing `this` binding, then `this` is undefined.
+// This is because `this` is bound to the global scope, which is window 
+// object by default, where we don't have a DOM defined in node runtime,
+// thus it becomes undefined.
+
 try {
     speak('bad call');
 } catch (e) {
@@ -106,3 +112,5 @@ let caseOfThisInFun = {
     }
 }
 console.log(caseOfThisInFun.demo());
+
+
