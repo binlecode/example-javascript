@@ -14,10 +14,10 @@ new Promise(function(resolve, reject) {
     return new Promise(function(resolve, reject) {
         setTimeout(() => {
             console.log('delayed by 1s');
-            resolve(result)
+            resolve(result);
         },
         1000);
-    })
+    });
 }).then(function(result) {
     console.log(`received data ${result}`);
     return result * 0;
