@@ -17,6 +17,18 @@ for (const key in myObj) {
     console.log(`key: ${key} => value: ${myObj[key]}`);
 }
 
+
+// note that for-in will also list propertyies added to object class's prototype
+
+class Foo {}
+let foo = new Foo();
+Foo.prototype.prop1 = 'value 1';
+
+for (const p in foo) {
+    console.log(`foo's ${p} => ${foo[p]}`);  // foo's prop1 => value 1
+}
+
+
 // for-of iterates elements of object, 
 // and only work with iterable objects like array or string
 for (const elm of list) {
