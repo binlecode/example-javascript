@@ -16,6 +16,8 @@ context where the function is defined.
 
 */
 
+'use strict';
+
 // var vs let
 // var is function scoped: a variable defined with 'var' makes it local to the 
 // function where it is defined. If it is not in a function, it becomes globally
@@ -33,7 +35,7 @@ if (true) {
 try {
     console.log(bar);
 } catch (e) {
-    console.log(e);  // ReferenceError: bar is not defined
+    console.log('caught error: ' + e);  // ReferenceError: bar is not defined
 }
 
 // by omitting 'var' or 'let' prefix, foo is defined as a global variable
