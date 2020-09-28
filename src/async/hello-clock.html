@@ -2,6 +2,14 @@
 <!-- a simple webpage showing time using window.setTimeout() -->
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A simpel timer page</title>
+
+
+    <!-- Bootstrap compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" crossorigin="anonymous">
+
     <script>
         function startTime() {
             var today = new Date();
@@ -22,6 +30,8 @@
 </head>
 
 <body onload="startTime()">
+
+    <h1>a simple timer:</h1>
 
     <h1 id="txt" style="color:white;-webkit-text-stroke: 1px black;"></h1>
 
