@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/binlecode/example-javascript/issues"
   },
-  "homepage": "https://github.com/binlecode/example-javascript#readme"
+  "homepage": "https://github.com/binlecode/example-javascript#readme",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0"
+  }
 }
