@@ -1,8 +1,9 @@
 
 /*
-logging with color thanks to chalk lib: https://github.com/chalk/chalk#readme
-
-npm install chalk
+ * logging with color thanks to chalk lib: https://github.com/chalk/chalk#readme
+ * 
+ * npm install chalk
+ * 
 */
 
 'use strict';

@@ -7,15 +7,6 @@
  * It is widely used in function and method call argument specification.
  */
 
-// selective indexing and rest picking
-
-const [e1, ...rest] = ['aa', 123, 'cake'];
-console.log(e1);
-console.log(rest);
-
-const [, e2, ...rest2] = ['aa', 123, 'cake'];
-console.log(e2)
-console.log(rest2);
 
 
 // destructure object via subset of its keys (property names)

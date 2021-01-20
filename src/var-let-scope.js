@@ -1,27 +1,29 @@
 
 /*
-
-Scope in a programming language controls the visibility and lifetimes of 
-variables and parameters.
-Most programming languages have block scope, the variables defined in the 
-block are released when execution of the block is finished.
-
-But, javascript does not support block scope even though it has block syntax.
-Instead, javascript has function scope. 
-That means that the parameters and variables defined in a function are not 
-visible outside of the function, and that a variable defined anywhere within
-a function is visible everywhere within the function.
-It also means a function has access to variables and parameters of the container 
-context where the function is defined.
-
-*/
+ * 
+ * Scope in a programming language controls the visibility and lifetimes of 
+ * variables and parameters.
+ * Most programming languages have block scope, the variables defined in the 
+ * block are released when execution of the block is finished.
+ * 
+ * But, javascript does not support block scope even though it has block syntax.
+ * Instead, javascript has **function** scope. 
+ * That means that the parameters and variables defined in a function are not 
+ * visible outside of the function, and that a variable defined anywhere within
+ * a function is visible everywhere within the function.
+ * It also means a function has access to variables and parameters of the container 
+ * context where the function is defined.
+ * 
+ */
 
 'use strict';
 
-// var vs let
+// var vs let:
 // var is function scoped: a variable defined with 'var' makes it local to the 
 // function where it is defined. If it is not in a function, it becomes globally
 // accessible even it is nested in code blocks.
+// let is lexical scoped: a variable defined within a code block is only accessible 
+// to the block and its containing blocks
 
 if (true) {
     var foo = 'foo';

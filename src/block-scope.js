@@ -1,8 +1,8 @@
 
 
-/**
+/*
  * Before ES2015, there's no block scope variable.
- * ES2015 introduced block scope keywords: let and const
+ * ES2015 (aka ES6) introduced block scope keywords: let and const
  */
 
  var x = 0;
