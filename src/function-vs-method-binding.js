@@ -18,9 +18,9 @@ to that new object.
 'use strict';
 
 // javascript methods are class properties that hold function values
-let duck = {color: 'yellow'};
+let duck = { color: 'yellow' };
 
-duck.quack = function(msg) {
+duck.quack = function (msg) {
     console.log(`this ${this.color} duck is quacking: ${msg}`);
 }
 
@@ -28,7 +28,7 @@ duck.quack = function(msg) {
 duck.color = 'pink';
 duck.quack('hello');  // => the pink duck... (not 'yellow duck...')
 
-let blackDuck = {color: 'black'};
+let blackDuck = { color: 'black' };
 // this raises TypeError as quack is only bound to duck object
 try {
     blackDuck.quack('abc');
@@ -43,21 +43,21 @@ function speak(msg) {
 }
 
 // makes `speak` function a method of duck object
-let speackingDuck = {type: 'duck', speak: speak};
+let speackingDuck = { type: 'duck', speak: speak };
 // method call has implicity binding of `this` pointing to the object
 speackingDuck.speak('hello');
 
 // if called as a function with explicit `.call`, `this` binding is 
 // passed in as the first argument
-let anotherSpeakingDuck = {type: 'duck'}
+let anotherSpeakingDuck = { type: 'duck' }
 speak.call(anotherSpeakingDuck, 'hello from another duck');
 
 // function way: function value is not among object properties
-let dog = {type: 'dog'};
-speak.call(dog, 'how are you');  
+let dog = { type: 'dog' };
+speak.call(dog, 'how are you');
 
 // method way: function value is among object properties
-let fox = {type: 'fox', speak: speak};
+let fox = { type: 'fox', speak: speak };
 fox.speak('cheers');
 
 // In either case above, the binding of `this` is resolved at calling time
@@ -80,7 +80,7 @@ try {
 let caseOfThisInArrow = {
     data: [1, 3, 5, 7, 9],
     // the arrow function references `this` from inside the local function
-    demo: function() {
+    demo: function () {
         // `demo` function has `this` binding to container object
         return this.data.filter(elm => {
             // arrow function sees the same `this` as the containing function
@@ -94,9 +94,9 @@ console.log(caseOfThisInArrow.demo());  // 5, 7, 9
 // as a comparison, we choose to replace the inner arrow function with a regular function
 let caseOfThisInFun = {
     data: [2, 4, 6, 8, 10],
-    demo: function() {
+    demo: function () {
         let superThis = this; // store container object `this` to a different local variable
-        let ftr = function(elm) {
+        let ftr = function (elm) {
             // this will raise error as binding of `this` is outer function `demo`,
             // which doesn't have `data` property
             try {
