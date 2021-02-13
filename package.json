@@ -19,6 +19,8 @@
   "homepage": "https://github.com/binlecode/example-javascript#readme",
   "dependencies": {
     "boxen": "^4.2.0",
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "express": "^4.17.1",
+    "socket.io": "^3.1.1"
   }
 }
