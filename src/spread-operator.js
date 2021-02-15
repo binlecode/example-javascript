@@ -10,9 +10,10 @@ const l2 = ['a', 'b'];
 console.log([l1, l2]);       // [ [ 1, 2, 3 ], [ 'a', 'b' ] ]
 console.log([...l1, ...l2]); // [ 1, 2, 3, 'a', 'b' ]
 
+// spread string to an array of chars
+console.log([...'hello']); // [ 'h', 'e', 'l', 'l', 'o' ]
 
 // - selective indexing and slicing
-
 
 const [first, ...rest] = ['aa', 123, 'cake'];
 console.log(first); // aa
