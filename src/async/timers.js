@@ -1,20 +1,14 @@
 
 /*
 
-Node, being JavaScript based, runs on a single thread. It is synchronous. 
-However, long running operations such as IO and other native API access 
-either runs asynchronously or on a separate thread.
-Node’s approach to managing this timing disconnect is the event loop.
+Timers are used to schedule events in the future.
 
-For example, when an I/O operation is needed, such as writing a chunk of
-text to a file, a callback function is specified to do any post-IO activity. 
-The rest of your application code is processed without waiting for the IO
-to finish.
-When the IO has finished, an event signaling the fact is returned to Node,
-and pushed on to a queue, waiting for process. 
-Node processes this event queue, and when it gets to the event signaled by 
-the completed IO operation, it matches the event to the callback, and the
-callback is processed.
+Note that when using timers, one should make no assumptions about the amount 
+of actual time that will expire before the callback registered for this timer
+fires, or about the ordering of callbacks. Node timers are not interrupts.
+Timers simply promise to execute as close as possible to the specified time
+(though never before), beholden, as with every other event source, to event 
+loop scheduling.
 
 */
 
