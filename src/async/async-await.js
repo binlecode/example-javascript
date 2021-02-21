@@ -30,6 +30,7 @@ hello().then((data) => console.log('A received message: ' + data));
 async function hello2() {
     let msg = await hello();
     console.log('B received message: ' + msg);
+    throw new Error('a new error');
 }
 
 // note that the line below is printed before `hello().then()` above is returned
@@ -37,7 +38,10 @@ console.log('another receiver start waiting for message');
 // run async function with error handler
 hello2()
     .catch((e) => {
-        console.log('got exception: ' + e.message);
+        console.log('got error message: ' + e.message);
+        console.log('got error stack: ' + e.stack);
+        // the stack is also available from console.trace
+        console.trace('Stack trace below:');
     });
 
 
